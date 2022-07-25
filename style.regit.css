@@ -561,110 +561,233 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
 /**********************************************************************************************************
-	 로그인 페이지를 위한 스타일 : Login
+	가입 페이지를 위한 스타일 : Registration
 **********************************************************************************************************/
-
-.wrap {
+header.box {
   width: 100%;
+  height: 80px;
+  padding: /* 18px */ 0;
+  /* line-height: 44px; */
+  border-bottom: 1px solid var(--border);
+}
+section {
+  display: none;
+  width: 100%;
+  height: calc(100% - 80px);
+  min-height: 620px;
+}
+.main_wrap {
+  width: inherit;
   height: 100%;
-  min-width: 1240px;
-  min-height: 650px;
+}
+.main_wrap > div {
   display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+}
+.main_left {
+  width: 40%;
+  justify-content: flex-end;
+}
+.main_right {
+  width: 60%;
+  justify-content: flex-start;
+}
+.content {
+  width: 100%;
+}
+.main_left .content {
+  max-width: 450px;
+}
+.main_right .content {
+  max-width: /* 698px */840px;
+}
+.img_bi {
+  padding-top: 4px;
+  /* padding-right: 10px; */ /* BI 반영 후 주석 처리 할 것 */
+  /* background-color: rgb(219, 238, 244); */ /* BI 반영 후 주석 처리 할 것 */
+}
+section .main_left .content {
+  display: flex;
+  height: 100%;
+  padding-right: 8%;
+  flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  background: url("랜딩페이지-시안1-top-bg.png")no-repeat center;
 }
-
-.login_main {
-  width: 400px;
-  height: 500px;
-  background: #fff;
-  box-shadow: 0 0 20px rgb(0 0 0 / 20%);
-  border: 1px solid rgb(203, 212, 222);
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-
-}
-.login_main_inner {
-  width: 320px;
-  height: 100%;
-}
-
-.login_top {
-  width: 200px;
-  height: 100px;
-  margin: 0 auto;
-}
-.login_top .img {
+section .main_left h1, section .main_left p {
   width: 100%;
-  height: 100%;
-  background: url("../assets/BI-v4-512x81-t.png") no-repeat center;
-  background-size: contain;
+  text-align: center;
+}
+section .main_left h1 {
+  line-height: 20px;
+}
+section .main_left p {
+  font-size: 1.1em;
+  line-height: 1.4em;
+  margin-top: 0.4em;  
+}
+section .main_left .img {
+  width: 100%;
+  min-height: 400px;
   background-position: center;
+  background-size: cover;
 }
-.login_bottom {
-  width: 320px;
-  height: calc(100% - 100px);
-  border-top: 1px solid #eee;
+
+section .main_right .content {
   display: flex;
-  flex-flow: column;
+  height: 100%;
+  padding: 0 5% 0 7%;
+  flex-flow: column wrap;
+  align-items: flex-start;
   justify-content: center;
 }
-
-/* .login_bottom h1 {
+section .main_right .header {
+  width: inherit;
+  padding-right: 13px;
+}
+section .main_right .header div {
+  width: 30%;
+  font-size: var(--font-xl);
+  color: white;
+  line-height: 40px;
   text-align: center;
-  padding-top: 20px;
-  font-size: 18px;
-  color: var(--blacks);
-} */
-
-.login_text {
-  width: 100%;
-  height: 240px;
-  align-items: center;
-}
-
-.login-text-pt {
-  width: 100%;
-  height: 90px;
-}
-
-.pw {
-  padding-top: 30px;
-  text-align: center;
-}
-.pw a {
-  font-size: 12px;
-  text-decoration: none;
-  color: #647287;
-}
-.pw a:hover {
-  color: var(--blue);
-  transition: .2s;
+  background-color: var(--border);
+  border-radius: 4px;
   cursor: default;
 }
+section .main_right div.active {
+  font-size: var(--font-xxl);
+  background-color: var(--primary);
+}
+section .main_right h2 {
+  padding: 1.4em 0;
+  line-height: 1.6em;
+  font-weight: 400;
+  color: var(--dark);
+}
+section .main_right h2 span {
+  padding-right: .2em;
+  font-weight: 600;
+}
+section .bottom {
+  width: calc(100% - 13px);
+  margin: 1.2em 13px 0 0;
+  padding: 1.5em 0;
+  border-top: 1px solid var(--border);
+}
+#Regit_Input_Step_1 .main_left, #Thanks_For_Regit .main_left {
+  background-color: rgb(219, 238, 244);
+}
+#Regit_Input_Step_2 .main_left {
+  background-color: rgb(253, 234, 218);
+}
+#Regit_Input_Step_3 .main_left {
+  background-color: rgb(235, 241, 222);
+}
+section label.top, section label.top_nbsp {
+  font-size: var(--font-md);
+  margin-bottom: 6px;
+}
+section input[type='text'], section input[type='password'] {
+  height: 40px;
+  font-size: var(--font-lg);
+}
+section button {
+  height: 40px;
+  font-size: var(--font-lg);
+}
+section button.inactive {
+  background-color: var(--border);
+  border-color: var(--border);
+  cursor: default;
+}
+section button.inactive:hover, section button.inactive:active, section button.inactive:focus {
+  background-color: var(--border);
+  border-color: var(--border);
+  transform: none;
+}
+section button.inactive:focus {
+  box-shadow: none;
+}
+section .checkbox_wrap {
+  height: 20px;
+}
+section .checkbox_label {
+  padding-left: 30px;
+  font-size: var(--font-lg);
+}
+section .checkbox_label > span {
+  padding-left: .2em;
+  color: var(--label);
+}
 
+section label.checkbox_label::before {
+  width: 20px;
+  height: 20px;
+}
 
+/* 체크박스 "Checked" 상태 배경 */
+section input[type='checkbox']:checked + label.checkbox_label::before {
+  width: 20px;
+  height: 20px;
+}
+/* 체크박스 "Checked" 상태 이미지 */
+section input[type='checkbox']:checked + label.checkbox_label::after {
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+}
+/* 셀렉트 "select" 스타일 */
+section select {
+  height: 40px;
+  font-size: var(--font-lg);
+}
+section .t-btn-blue {
+  padding-left: 1em;
+  font-size: var(--font-lg);
+}
+section p.dash {
+  line-height: 40px;
+}
+section p.domain {
+  padding-left: .3em;
+  font-size: var(--font-lg);
+  line-height: 40px;
+  letter-spacing: .1em;
+}
+section p.description {
+  padding-bottom: 10px;
+  color: var(--gray);
+}
 
+section#Regit_Input_Step_1 .main_left .img, section#Thanks_For_Regit .main_left .img {
+  background-image: url(../assets/step-1-img-02.png);
+}
+section#Regit_Input_Step_2 .main_left .img {
+  background-image: url(../assets/step-2-img-02.png);
+}
+section#Regit_Input_Step_3 .main_left .img {
+  background-image: url(../assets/step-3-img-02.png);
+}
 
+/**********************************************************************************************************
+	Media query
+**********************************************************************************************************/
+@media only screen and (min-width: 10px) and (max-width: 1239px) {
+  /* 	최소 요구 가로 픽셀 안내 표시 */
+  #Min_Width_Message_Regit {
+    height: 50px;
+    background-color: #ea002c;
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media only screen and (min-width: 1300px) {
+  
+}
