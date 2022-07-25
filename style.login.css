@@ -573,7 +573,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("랜딩페이지-시안1-top-bg.png")no-repeat center;
+  background: url("../assets/랜딩페이지-시안1-top-bg.png")no-repeat center;
 }
 
 .login_main {
